@@ -16,18 +16,35 @@
 	</properties>
 	<modules>
 		<module>com-aliyun</module>
+		<module>com-commons</module>
 		<module>com-baidu</module>
 		<module>com-excel</module>
 		<module>com-hibernate</module>
 		<module>com-httpclient</module>
 		<module>com-json</module>
+		<module>com-jsp-servlet</module>
 		<module>com-shiro</module>
 		<module>com-spring</module>
 		<module>com-spring-mvc</module>
 		<module>com-tencent</module>
+		<module>com-quartz</module>
 	</modules>
 
 	<dependencies>
+		
+		
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.7.25</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.25</version>
+		</dependency>
+		
 		
 		<dependency>
 			<groupId>junit</groupId>
