@@ -6,11 +6,11 @@
 	<parent>
 		<groupId>com.jin</groupId>
 		<artifactId>common</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>0.0.1</version>
 	</parent>
 	<groupId>com.jin</groupId>
 	<artifactId>com-spring-mvc</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<packaging>jar</packaging>
 
 	<name>com-spring-mvc</name>

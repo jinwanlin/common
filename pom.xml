@@ -6,7 +6,7 @@
 
 	<groupId>com.jin</groupId>
 	<artifactId>common</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<packaging>pom</packaging>
 
 	<properties>
@@ -28,6 +28,7 @@
 		<module>com-spring-mvc</module>
 		<module>com-tencent</module>
 		<module>com-quartz</module>
+		<module>com-jingdong</module>
 	</modules>
 
 	<dependencies>

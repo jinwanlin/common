@@ -3,19 +3,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<groupId>com.jin</groupId>
-		<artifactId>common</artifactId>
-		<version>0.0.1</version>
-	</parent>
-
-
 	<groupId>com.jin</groupId>
-	<artifactId>com-quartz</artifactId>
-	<version>0.0.1</version>
+	<artifactId>com-lucene</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>com-quartz</name>
+	<name>com-lucene</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -23,16 +16,22 @@
 	</properties>
 
 	<dependencies>
-		<!-- quart任务调度 -->
+
 		<dependency>
-			<groupId>org.quartz-scheduler</groupId>
-			<artifactId>quartz</artifactId>
-			<version>2.2.1</version>
+			<groupId>org.apache.lucene</groupId>
+			<artifactId>lucene-analyzers</artifactId>
+			<version>3.6.2</version>
 		</dependency>
 		<dependency>
-			<groupId>org.quartz-scheduler</groupId>
-			<artifactId>quartz-jobs</artifactId>
-			<version>2.2.1</version>
+			<groupId>org.apache.lucene</groupId>
+			<artifactId>lucene-core</artifactId>
+			<version>4.10.3</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.lucene</groupId>
+			<artifactId>IKAnalyzer</artifactId>
+			<version>3.2.8</version>
 		</dependency>
 	</dependencies>
 </project>

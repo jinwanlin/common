@@ -9,13 +9,12 @@
 		<version>0.0.1</version>
 	</parent>
 
-
 	<groupId>com.jin</groupId>
-	<artifactId>com-quartz</artifactId>
+	<artifactId>com-jingdong</artifactId>
 	<version>0.0.1</version>
 	<packaging>jar</packaging>
 
-	<name>com-quartz</name>
+	<name>com-jingdong</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -23,16 +22,14 @@
 	</properties>
 
 	<dependencies>
-		<!-- quart任务调度 -->
+
+
 		<dependency>
-			<groupId>org.quartz-scheduler</groupId>
-			<artifactId>quartz</artifactId>
-			<version>2.2.1</version>
+			<groupId>com.jd</groupId>
+			<artifactId>jd</artifactId>
+			<version>2.0</version>
 		</dependency>
-		<dependency>
-			<groupId>org.quartz-scheduler</groupId>
-			<artifactId>quartz-jobs</artifactId>
-			<version>2.2.1</version>
-		</dependency>
+
+
 	</dependencies>
 </project>
