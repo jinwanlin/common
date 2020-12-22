@@ -10,9 +10,7 @@
 	</parent>
 
 
-	<groupId>com.jin</groupId>
 	<artifactId>com-commons</artifactId>
-	<version>0.0.1</version>
 	<packaging>jar</packaging>
 
 	<name>com-commons</name>
@@ -22,7 +20,32 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
+
+	<build>
+		<finalName>library</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	
+	
 	<dependencies>
+	
+	
+		<dependency>
+			<groupId>redis.clients</groupId>
+			<artifactId>jedis</artifactId>
+			<version>2.8.0</version>
+		</dependency>
+		
+		
 		
 		<dependency>
 			<groupId>commons-logging</groupId>
@@ -57,6 +80,27 @@
 			<groupId>commons-fileupload</groupId>
 			<artifactId>commons-fileupload</artifactId>
 			<version>1.2.2</version>
+		</dependency>
+		
+		
+		
+		<dependency>
+			<groupId>com.jin</groupId>
+			<artifactId>com-httpclient</artifactId>
+			<version>0.0.1</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.jin</groupId>
+			<artifactId>com-json</artifactId>
+			<version>0.0.1</version>
+		</dependency>
+		
+		
+		<dependency>
+			<groupId>com.jin</groupId>
+			<artifactId>com-quartz</artifactId>
+			<version>0.0.1</version>
 		</dependency>
 
 	</dependencies>

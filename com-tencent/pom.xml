@@ -8,9 +8,7 @@
 		<version>0.0.1</version>
 	</parent>
 	
-  <groupId>com.jin</groupId>
   <artifactId>com-tencent</artifactId>
-  <version>0.0.1</version>
   <packaging>jar</packaging>
 
   <name>com-tencent</name>
@@ -28,6 +26,19 @@
 			<groupId>org.bouncycastle</groupId>
 			<artifactId>bcprov-jdk15on</artifactId>
 			<version>1.57</version>
+		</dependency>
+		
+		
+		<dependency>
+			<groupId>com.jin</groupId>
+			<artifactId>com-commons</artifactId>
+			<version>0.0.1</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.jin</groupId>
+			<artifactId>com-quartz</artifactId>
+			<version>0.0.1</version>
 		</dependency>
 		
   </dependencies>

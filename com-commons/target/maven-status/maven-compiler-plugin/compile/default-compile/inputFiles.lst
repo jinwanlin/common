@@ -1,1 +1,6 @@
-/Users/jin/git/common/com-commons/src/main/java/com/jin/commons/App.java
+/Users/jin/git/common/com-commons/src/main/java/com/jin/commons/json/Tuple.java
+/Users/jin/git/common/com-commons/src/main/java/com/jin/commons/json/AppendJsonSerializer.java
+/Users/jin/git/common/com-commons/src/main/java/com/jin/commons/httputil/HttpUtil.java
+/Users/jin/git/common/com-commons/src/main/java/com/jin/commons/json/AppendJsonBean.java
+/Users/jin/git/common/com-commons/src/main/java/com/jin/commons/json/JsonUtil.java
+/Users/jin/git/common/com-commons/src/main/java/com/jin/commons/json/CustomObjectMapper.java
