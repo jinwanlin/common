@@ -10,6 +10,15 @@ import java.util.List;
  */
 
 public class GzhUserInfo {
+	
+	/**
+	 * 没有允许获得头像
+	 * {"errcode":48001,"errmsg":"api unauthorized, hints: [ req_id: FkLFAawgE-g5ZpTA ]"}
+	 */
+	
+	private String errcode;
+	
+	private String errmsg;
 
 	private String openid;
 	
@@ -109,4 +118,22 @@ public class GzhUserInfo {
 	public String getUnionid() {
 		return unionid;
 	}
+
+	public String getErrcode() {
+		return errcode;
+	}
+
+	public void setErrcode(String errcode) {
+		this.errcode = errcode;
+	}
+
+	public String getErrmsg() {
+		return errmsg;
+	}
+
+	public void setErrmsg(String errmsg) {
+		this.errmsg = errmsg;
+	}
+	
+	
 }

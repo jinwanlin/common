@@ -12,7 +12,7 @@ public class GzhUtil {
 
 	
 
-	public static GzhUserInfo getUserInfo(String openid, String access_token) throws Exception {
+	private static GzhUserInfo getUserInfo(String openid, String access_token) throws Exception {
 		logger.info("getUserInfo(gzhUser, "+access_token+")");
 		/**
 		 已关注公众号
@@ -81,7 +81,7 @@ public class GzhUtil {
 		if(StringUtils.isNotBlank(oauth2.getErrcode())) {
 			throw new CommonException(oauth2.getErrmsg());
 		}
-		GzhUserInfo info = GzhUtil.getUserInfo(oauth2.getOpenid(), oauth2.getAccessToken());
+		GzhUserInfo info = getUserInfo(oauth2.getOpenid(), oauth2.getAccessToken());
 		
 		return new LoginResponseBean(info, oauth2);
 		

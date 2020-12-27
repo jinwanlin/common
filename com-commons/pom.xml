@@ -8,12 +8,8 @@
 		<artifactId>common</artifactId>
 		<version>0.0.1</version>
 	</parent>
-
-
 	<artifactId>com-commons</artifactId>
 	<packaging>jar</packaging>
-
-	<name>com-commons</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -37,6 +33,28 @@
 	
 	
 	<dependencies>
+	
+	
+	
+		<dependency>
+			<groupId>com.jin</groupId>
+			<artifactId>com-spring</artifactId>
+			<version>0.0.1</version>
+		</dependency>
+	
+
+
+		<dependency>
+			<groupId>javax.inject</groupId>
+			<artifactId>javax.inject</artifactId>
+			<version>1</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.4</version>
+		</dependency>
 	
 	
 		<dependency>

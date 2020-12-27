@@ -23,9 +23,20 @@ public class XcxUtil {
 		String result = HttpUtil.sendGet(url);
 		logger.info("oauth2 result: "+result);
 		XcxOauth2Response oauth2 = JsonUtil.json2Bean(result, XcxOauth2Response.class);
-		if(oauth2.getErrcode()!=0) {
+		if(oauth2.getErrcode()==null) {
+			return oauth2;
+		}else{
 			throw new CommonException(oauth2.getErrmsg());
 		}
-		return oauth2;
+	}
+	
+	public static void main(String[] args) throws Exception {
+		String result = "{\"session_key\":\"0XdfXBdu2hf0NrA0wimUZA==\",\"openid\":\"oIMkF5oo0sDVs3fc2uQOxqxvPgOs\",\"unionid\":\"odio8tyN_Yvt6b13HLFaJyHtSsxs\"}";
+		XcxOauth2Response oauth2 = JsonUtil.json2Bean(result, XcxOauth2Response.class);
+		if(oauth2.getErrcode()==null) {
+			System.out.println(oauth2.getUnionid()); 
+		}else{
+			throw new CommonException(oauth2.getErrmsg());
+		}
 	}
 }
