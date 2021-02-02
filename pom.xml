@@ -16,19 +16,22 @@
 	</properties>
 	<modules>
 		<module>com-aliyun</module>
-		<module>com-commons</module>
 		<module>com-baidu</module>
+		<module>com-commons</module>
 		<module>com-excel</module>
 		<module>com-hibernate</module>
 		<module>com-httpclient</module>
+		<module>com-jingdong</module>
 		<module>com-json</module>
 		<module>com-jsp-servlet</module>
+		<module>com-lucene</module>
+		<module>com-quartz</module>
+		<module>com-redis</module>
 		<module>com-shiro</module>
 		<module>com-spring</module>
 		<module>com-spring-mvc</module>
 		<module>com-tencent</module>
-		<module>com-quartz</module>
-		<module>com-jingdong</module>
+		<module>com-video</module>
 	</modules>
 
 	<dependencies>

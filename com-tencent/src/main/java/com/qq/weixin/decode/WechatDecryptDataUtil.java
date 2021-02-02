@@ -16,15 +16,12 @@ public class WechatDecryptDataUtil {
 
 	private static Logger logger = Logger.getLogger(WechatDecryptDataUtil.class);
 	
-	public static void main(String[] args) {
-		String result = decryptData(
-				"sDXrUftQyBSyY7M4Ro4Xvjl8amI2agPjUWkcJXTJx6qsqaeetGdE7bp7P7V95aU7TS6O6l9cSznKhw5dhvkjSE+2vH19SntKxvfNtWUJigVKgzB28ACPjROC/4tidR4mMjJO81HX9pMCjusMVdYy0YzlYvvtCgTUNIOHNByMSB5fJ+vXIMnw==",
-				"9y9P6RqKVZiWg==", "Yi1SGcsMg==");
-		logger.info("result = " + result);
-	}
-
 	static String decryptData(String encryptDataB64, String sessionKeyB64, String ivB64) {
-		return new String(decryptOfDiyIV(Base64.decode(encryptDataB64), Base64.decode(sessionKeyB64), Base64.decode(ivB64)));
+		byte[] decrypt = decryptOfDiyIV(Base64.decode(encryptDataB64), Base64.decode(sessionKeyB64), Base64.decode(ivB64));
+		if(decrypt==null) {
+			return null;
+		}
+		return new String(decrypt);
 	}
 
 	private static final String KEY_ALGORITHM = "AES";

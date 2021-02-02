@@ -76,11 +76,11 @@ public class EmailService {
 	 * @param content 内容
 	 */
 	public void sendSimpleMail(final String receiver, final String subject, final String content) {
-		if(!isServer) {
-			logger.info("苹果电脑不发邮件: "+subject);
-			logger.info(content);
-			return;
-		}
+//		if(!isServer) {
+//			logger.info("苹果电脑不发邮件: "+subject);
+//			logger.info(content);
+//			return;
+//		}
 		if(StringUtils.isBlank(subject)) {
 			logger.error("邮件标题不能为空");
 			return;
