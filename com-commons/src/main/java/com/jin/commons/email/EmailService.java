@@ -43,6 +43,7 @@ public class EmailService {
 	private static String host;
 	private static String username;
 	private static String password;
+	private static String nick;
 	
 	/** sender */
 	@Autowired
@@ -54,6 +55,7 @@ public class EmailService {
 			Properties properties = new Properties();
 			InputStream is = ConfigProperties.class.getResourceAsStream("/email.properties");
 			properties.load(is);
+			nick=properties.get("com.health.sys.email.nick").toString();
 			host=properties.get("com.health.sys.email.host").toString();
 			username=properties.get("com.health.sys.email.userName").toString();
 			password=properties.get("com.health.sys.email.pwd").toString();
@@ -76,11 +78,11 @@ public class EmailService {
 	 * @param content 内容
 	 */
 	public void sendSimpleMail(final String receiver, final String subject, final String content) {
-//		if(!isServer) {
-//			logger.info("苹果电脑不发邮件: "+subject);
-//			logger.info(content);
-//			return;
-//		}
+		if(!isServer) {
+			logger.info("开发电脑不发邮件: "+subject);
+			logger.info(content);
+			return;
+		}
 		if(StringUtils.isBlank(subject)) {
 			logger.error("邮件标题不能为空");
 			return;
@@ -102,13 +104,12 @@ public class EmailService {
 					MimeMessageHelper helper = new MimeMessageHelper(message, getMailEncoding());
 
 					//设置自定义发件人昵称
-					String nick="系统异常消息";
 					try {
-						nick=javax.mail.internet.MimeUtility.encodeText("小木屋租书");
+						String nickEncode=javax.mail.internet.MimeUtility.encodeText(nick);
+						helper.setFrom(new InternetAddress(nickEncode+" <"+javaMailSenderImpl.getUsername()+">"));
 					} catch (UnsupportedEncodingException e) {
 						e.printStackTrace();
 					} 
-					helper.setFrom(new InternetAddress(nick+" <"+javaMailSenderImpl.getUsername()+">"));
 					
 					helper.setTo(receiver);
 					helper.setSubject(subject);
@@ -149,21 +150,4 @@ public class EmailService {
 	}
 
 
-	public static void isServer() {
-		boolean isServer = true;
-		try {
-			Runtime rt = Runtime.getRuntime();
-			Process p = rt.exec("who am i");// df -hl 查看硬盘空间
-			List<String> result = IOUtils.readLines(p.getInputStream(), "GBK");
-			for (String line: result) {
-			    if(line.contains("jin")) {
-			    	isServer = false;
-			    }
-			}
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
-		EmailService.isServer = isServer;
-	}
 }

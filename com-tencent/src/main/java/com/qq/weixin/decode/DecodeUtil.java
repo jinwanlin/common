@@ -1,5 +1,6 @@
 package com.qq.weixin.decode;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 
 import net.sf.json.JSONObject;
@@ -41,12 +42,14 @@ public class DecodeUtil {
 //			}
 //		}
 		
-		if(result.startsWith("{")) {
-			JSONObject json = JSONObject.fromObject(result);
-			if(json.containsKey("unionId")) {//注意I是大写
-				String unionid = json.getString("unionId");//注意I是大写
-				logger.info("decodeUnionid unionid:"+unionid);
-				return unionid;
+		if(StringUtils.isNotBlank(result)) {
+			if(result.startsWith("{")) {
+				JSONObject json = JSONObject.fromObject(result);
+				if(json.containsKey("unionId")) {//注意I是大写
+					String unionid = json.getString("unionId");//注意I是大写
+					logger.info("decodeUnionid unionid:"+unionid);
+					return unionid;
+				}
 			}
 		}
 		
@@ -78,11 +81,13 @@ public class DecodeUtil {
 //		}
 		String result = WechatDecryptDataUtil.decryptData(encryptedData, sessionKey, iv);
 		logger.info("decode phoneNum result:"+result);
-		if(result.startsWith("{")) {
-			JSONObject json = JSONObject.fromObject(result);
-			if(json.containsKey("phoneNumber")) {
-				String phoneNum = json.getString("phoneNumber");
-				return phoneNum;
+		if(result!=null) {
+			if(result.startsWith("{")) {
+				JSONObject json = JSONObject.fromObject(result);
+				if(json.containsKey("phoneNumber")) {
+					String phoneNum = json.getString("phoneNumber");
+					return phoneNum;
+				}
 			}
 		}
 		return null;
